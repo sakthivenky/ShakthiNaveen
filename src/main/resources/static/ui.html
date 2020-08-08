@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My SpringBoot Application</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script
+	src="https://adminlte.io/themes/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+		<div class="jumbotron col-sm-offset-4 col-md-4"
+			style="background-color: blue; font-stretch: ultra-expanded">
+			<input type="text" class="form-control" id="uname"	ng-model="uname" placeholder="Enter a Name...">
+			<button type="submit" class="btn btn-success" ng-click="shakthi(uname)">Greet Me</button>
+			{{myresponse}}
+		</div>
+	</div>
+</body>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope, $http) {
+		
+		$scope.myresponse ="";
+		
+		$scope.shakthi = function (uname)
+		{
+		//	alert(uname);
+			$http.get("http://localhost:4040/xyz/mnop?myname="+uname)
+			.then(
+					function(response) {
+						$scope.myresponse = response.data;
+						//alert($scope.myresponse);
+					});
+			
+			
+			
+		}
+
+	});
+</script>
+</html>
