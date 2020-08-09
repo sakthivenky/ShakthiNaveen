@@ -14,6 +14,7 @@ public class MyController {
 			@RequestParam (name="myname") String mname			
 			)
 	{
+		System.out.println("In java  "+mname);
 		return "Hi Hello Welcome to SpringBoot Mr."+mname;
 	}
 
