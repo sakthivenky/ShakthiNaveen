@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome Page</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script
+	src="https://adminlte.io/themes/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
+<script
+	src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+<div ng-app="navaneeApp" ng-controller="navaneeCtrl">
+<div class="jumbotron col-sm-offset-4 col-md-4"
+		style="background-color: lightblue; font-stretch: ultra-condensed" ng-show="lgstatus">
+		<input type="text" id="uname" ng-model="uname" placeholder="Enter User Name"> 
+		<input type="password" placeholder="Enter Password"><br>
+		<button type="submit" class="btn btn-success" ng-click="navaneeth(uname)">Fireit</button>
+		
+		</div>
+<div class="jumbotron col-sm-offset-4 col-md-4"
+			style="background-color: orange; font-stretch: ultra-condensed" ng-show="wpstatus">
+			<h3>
+				<center>Welcome to home page</center>
+			</h3>
+			<pre class="tab">			 {{myresponsedata}}!!	</pre>
+			
+		</div>
+</div>
+</body>
+</html>
