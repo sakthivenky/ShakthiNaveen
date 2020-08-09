@@ -7,14 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/xyz")
-public class MyController {
+public class MyController {	
 	
+		
 	@RequestMapping(value="/mnop", method=RequestMethod.GET, produces="text/html")
 	public String test(
 			@RequestParam (name="myname") String mname			
 			)
 	{
 		System.out.println("In java  "+mname);
+		
+		
 		return "Hi Hello Welcome to SpringBoot Mr."+mname;
 	}
 
