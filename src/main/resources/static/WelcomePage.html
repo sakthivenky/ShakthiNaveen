@@ -28,6 +28,13 @@
 				<button type="submit" class="btn btn-warning"
 					ng-click="navaneeth(uname,pwd)">Fireit</button>
 					
+					<button type="submit" class="btn btn-warning"
+					ng-click="list_user()">List All Users</button>
+					
+					<div ng-repeat="u in userList">
+					{{u.userId}}  {{u.userName}}  {{u.password}}
+					</div>
+					
 					<div ng-if="myresponsedata=='notok'">
 					<p> User not Authorized</p>
 					</div>

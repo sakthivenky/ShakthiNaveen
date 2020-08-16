@@ -9,6 +9,20 @@
 	$scope.wpstatus=false;
 	$scope.lgstatus=true;
 	$scope.username="";
+	$scope.userList = "";
+	$scope.list_user = function()
+	{
+		alert('list user function called');
+		$http.get("http://localhost:4040/user/getAllUsers/")
+		.then(
+				function(response) {
+					$scope.userList = response.data;	
+					console.log($scope.userList);
+				});
+		
+		
+	}
+	
 	$scope.navaneeth = function(uname,pwd) {
 		alert(uname+"  "+pwd);
 		$scope.wpstatus=true;
