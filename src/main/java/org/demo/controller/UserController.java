@@ -50,6 +50,12 @@ public class UserController {
 		System.out.println(udetail);
 		return udetail;
 	}
+	
+	@RequestMapping (value="/getAllUsers", method=RequestMethod.GET, produces="application/json")
+	public List<User> getAllUsers()
+	{
+		return userRepo.findAll();
+	}
 
 }
 
